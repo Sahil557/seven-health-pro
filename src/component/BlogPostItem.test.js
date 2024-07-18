@@ -1,5 +1,3 @@
-// BlogPostItem.test.js
-
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import BlogPostItem from './BlogPostItem';
@@ -15,17 +13,12 @@ describe('BlogPostItem', () => {
 
     render(<BlogPostItem post={mockPost} />);
 
-    // Assert that the component renders with the correct mock data
     const articleTitle = screen.getByText(mockPost.title);
     const articleDescription = screen.getByText(mockPost.description);
-    const articlePublishedDate = screen.getByText('7/18/2024'); // Example date format assertion
+    const articlePublishedDate = screen.getByText('7/18/2024');
 
     expect(articleTitle).toBeInTheDocument();
     expect(articleDescription).toBeInTheDocument();
     expect(articlePublishedDate).toBeInTheDocument();
-
-    // Add more specific assertions as per your component's behavior
   });
-
-  // Add more tests for other scenarios as needed
 });

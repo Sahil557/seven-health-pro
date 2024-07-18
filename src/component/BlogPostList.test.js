@@ -1,8 +1,6 @@
-// BlogPostItem.test.js
-
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import BlogPostItem from './BlogPostItem'; // Adjust the import path based on your project structure
+import BlogPostItem from './BlogPostItem';
 
 describe('BlogPostItem', () => {
   const mockArticle = {
@@ -25,10 +23,9 @@ describe('BlogPostItem', () => {
   it('renders BlogPostItem component with mock article data', () => {
     render(<BlogPostItem article={mockArticle} />);
 
-    // Assertions based on your component's rendering logic
-    const articleTitle = screen.getByText(/Elon Musk donează o sumă uriașă/i); // Adjust text to match your actual component rendering
-    const articleDescription = screen.getByText(/Multimiliardarul Elon Musk intenţionează să doneze/i); // Adjust text accordingly
-    const articlePublishedDate = screen.getByText('16 July 2024'); // Adjust date format and content based on your component
+    const articleTitle = screen.getByText(/Elon Musk donează o sumă uriașă/i);
+    const articleDescription = screen.getByText(/Multimiliardarul Elon Musk intenţionează să doneze/i);
+    const articlePublishedDate = screen.getByText('16 July 2024');
 
     expect(articleTitle).toBeInTheDocument();
     expect(articleDescription).toBeInTheDocument();
